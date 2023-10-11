@@ -18,8 +18,8 @@ class UserSeeder extends Seeder
          * * Create Administrator
          */
         User::factory()->create([
-            'full_name' => 'Administrator',
-            'email' => 'administrator@ditdaya.kemdikbud.go.id',
+            'name' => 'Administrator',
+            'email' => 'administrator@example.com',
             'role' => UserRoleName::ADMINISTRATOR,
         ]);
 

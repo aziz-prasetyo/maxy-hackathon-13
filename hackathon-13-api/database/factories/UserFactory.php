@@ -29,7 +29,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'full_name' => $this->faker->name(),
+            'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
