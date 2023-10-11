@@ -13,7 +13,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::with(['userDetail'])->get();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'successfully retrieved all users.',
+            'data' => $users,
+        ]);
     }
 
     /**

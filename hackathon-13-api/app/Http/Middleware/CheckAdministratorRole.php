@@ -16,8 +16,10 @@ class CheckAdministratorRole
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::guard('api')->check() && !$request->user()->role->isAdministrator()) {
-            abort(404, 'This is not the URL you are looking for.');
+        if (!$request->user('api')?->role->isAdministrator()) {
+            return response()->json([
+                'message' => 'This is not the URL you are looking for.',
+            ]);
         }
 
         return $next($request);

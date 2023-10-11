@@ -18,3 +18,19 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user', [UserController::class, 'authenticated'])->name('user.authenticated');
 });
+
+Route::middleware(['role.administrator'])->group(function () {
+    Route::apiResource('users', UserController::class);
+});
+
+Route::middleware(['role.employee'])->group(function () {
+    
+});
+
+Route::middleware(['role.partner'])->group(function () {
+    
+});
+
+Route::middleware(['role.guest'])->group(function () {
+    
+});
