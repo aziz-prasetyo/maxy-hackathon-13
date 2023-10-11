@@ -9,14 +9,75 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
     <style>
-        span{
-            color: #73ff73;
+        /* navbar */
+        .navbar-nav a:hover{
+            color: #a80000;
+        }
+        #navbar{
+            background-color: #aeaeae;
+        }
+        #login-btn{
+            background-color: #aeaeae;
+            color: black;
+        }
+        #login-btn:hover{
+            background-color: #a80000;
+            color: white;
+        }
+
+        /* about us */
+        #about{
+            background-color: #151515;
+            padding-top: 10rem;
+            padding-bottom: 7rem;
+            padding-left: 5rem;
+        }
+        #about-txt2{
+            font-size: 55px;
+        }
+        #about-txt1{
+            color: #a80000;
+        }
+        #partner img{
+            object-fit: cover;
+            max-width: 100px;
+        }
+
+        /* customer and owner */
+        #customer{
+            border-right: 2px solid #a80000;
+        }
+        #owner{
+            border-left: 2px solid #a80000;
+        }
+
+        /* form */
+        form input{
+            box-shadow: rgba(0, 0, 0, 1) 2.4px 2.4px 3.2px;
+        }
+        form textarea{
+            box-shadow: rgba(0, 0, 0, 1) 2.4px 2.4px 3.2px;
+        }
+        form button{
+            box-shadow: rgba(0, 0, 0, 1) 2.4px 2.4px 3.2px;
+        }
+        form #submit-btn:hover{
+            background-color: rgb(168, 0, 0);
+            box-shadow: rgba(168, 0, 0, 0.5) 2.4px 2.4px 3.2px;
+            color: white;
+        }
+
+        /* footer */
+        footer{
+            border-top: 3px solid black;
         }
     </style>
 </head>
 <body class="bg-light">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom sticky-top py-4" data-bs-theme="light">
-        <div class="container">
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top p-0">
+        <div class="container-fluid p-3 px-5" id="navbar">
             <a class="navbar-brand m-0 fw-bold fs-3" href="#"><img src="img/img.png" alt="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -24,28 +85,168 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto gap-1 d-flex align-items-center">
-                    <li class="nav-item"><a class="nav-link fw-semibold fs-5" href="#">Product</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold fs-5" href="homepage.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold fs-5" href="product.html">Product</a></li>
                     <li class="nav-item"><a class="nav-link fw-semibold fs-5" href="#">Contact</a></li>
                     <li class="nav-item"><a class="nav-link fw-semibold fs-5" href="#">FAQ</a></li>
                 </ul>
                 <form class="d-flex justify-content-end">
-                    <a class="btn btn-dark btn-outline-light btn-lg" href="./login.html">Login</a>
+                    <a id="login-btn" class="btn btn-dark btn-outline-danger btn-lg text-bold" href="./login.html">Login</a>
                 </form>
             </div>
         </div>
     </nav>
 
     <!-- about us -->
-    <div class="container-fluid bg-dark text-light d-flex align-items-center justify-content-center" style="height: 500px;">
-        <div class="row d-flex justify-content-center">
-            <p class="col col-md-8 fs-1 fw-bold text-center">Temukan <span>Ruangan</span> untuk Setiap <span>Pekerjaan</span></p>
+    <div id="about" class="container-fluid d-flex align-items-center">
+        <div class="row row-cols-1">
+            <p id="about-txt1" class="col col-md-7 fs-4 text-start">- office, working space, and studio</p>
+            <p id="about-txt2" class="col col-md-7 fw-bold text-start text-light">Temukan Ruangan Untuk Setiap Pekerjaan</p>
+            <p id="about-txt3" class="col col-md-7 fw-light text-start text-light">Temukan ruang kerja yang sesuai dengan anggaran dan kebutuhan Anda, dan tingkatkan produktivitas!</p>
+            <div class="col mt-5">
+                <p class="text-light pb-1 fw-bold">Partner Kami</p>
+                <div class="row">
+                    <div id="partner" class="col">
+                        <img class="me-4" src="./img/partner1.png" alt="">
+                        <img src="./img/partner2.png" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- What is Customer & Building Owner -->
-    <div class="container-fluid">
-
+    <div class="container-fluid p-5">
+        <div class="row px-5">
+            <div id="customer" class="col-md">
+                <div class="row row-cols-1">
+                    <div class="col fw-bold fs-4 p-4">As Customers</div>
+                    <div class="col pb-5" style="max-width: 80%;"><img class="img-fluid" src="./img/room1.png" alt="#"></div>
+                    <div class="col-lg-6 fw-bold pb-1 fs-4">Space Terbaik untuk Semua Tim dan Pekerjaan Anda</div>
+                    <div class="col-lg-10 fw-light fs-5">Dengan berbagai pilihan ruangan yang dapat disesuaikan dengan kebutuhan Anda, kami akan membantu Anda mencari ruangan kerja yang sesuai dengan anggaran dan kebutuhan Anda. Temukan ruangan kerja Anda sekarang dan tingkatkan produktivitas kerja Anda!</div>
+                </div>
+            </div>
+            <div id="owner" class="col-md">
+                <div class="row row-cols-1 d-flex justify-content-end">
+                    <div class="col text-end fw-bold fs-4 p-4">As Building Owner</div>
+                    <div class="col pb-5" style="max-width: 80%;"><img class="img-fluid" src="./img/room2.png" alt="#"></div>
+                    <div class="col-lg-6 fw-bold fs-4 pb-1 text-end">Tingkatkan Tenants Office Tower bersama Kami</div>
+                    <div class="col-lg-10 fw-light fs-5 text-end">Tidak ada lagi lantai dan ruang kosong di office tower Anda dengan solusi strategi marketing yang tepat. Dengan menggunakan digital marketing berbasis data yang efektif, Workfrom siap memberikan hasil nyata bagi Anda.</div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Use case or events -->
+    <div class="container-fluid bg-dark text-light pb-5">
+        <div class="row d-flex justify-content-center pt-5 pb-3">
+            <div class="col-lg-3 fs-2 fw-bold text-center pb-3">Sesuaikan Dengan Kebutuhan Anda</div>
+        </div>
+        <div class="row p-3">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col d-flex align-items-center" style="max-width: 50%;"><img class="img-fluid" src="./img/event.png" alt="#"></div>
+                    <div class="col d-flex align-items-center">
+                        <div class="row row-cols-1">
+                            <div class="col fw-bold fs-4">EVENT</div>
+                            <div class="col-md-9 fw-light">Rayakan perayaan dan acara terbaik dengan tempat pilihan terbaik dan akses lebih mudah.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col d-flex align-items-center">
+                        <div class="row row-cols-1 d-flex justify-content-end">
+                            <div class="col fw-bold fs-4 text-end">MEETING</div>
+                            <div class="col-md-9 text-end d-flex align-items-center fw-light">Rayakan perayaan dan acara terbaik dengan tempat pilihan terbaik dan akses lebih mudah.</div>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-center" style="max-width: 50%;"><img class="img-fluid" src="./img/meeting.png" alt="#"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row p-3">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col d-flex align-items-center" style="max-width: 50%;"><img class="img-fluid" src="./img/videoshoot.png" alt="#"></div>
+                    <div class="col d-flex align-items-center">
+                        <div class="row row-cols-1">
+                            <div class="col fw-bold fs-4">VIDEOSHOOT</div>
+                            <div class="col-md-9 fw-light">Rayakan perayaan dan acara terbaik dengan tempat pilihan terbaik dan akses lebih mudah.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row d-flex justify-content-end">
+                    <div class="col d-flex align-items-center">
+                        <div class="row row-cols-1 d-flex justify-content-end">
+                            <div class="col fw-bold fs-4 text-end">PHOTOSHOOT</div>
+                            <div class="col-md-9 text-end fw-light">Rayakan perayaan dan acara terbaik dengan tempat pilihan terbaik dan akses lebih mudah.</div>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-center" style="max-width: 50%;"><img class="img-fluid" src="./img/photoshoot.png" alt="#"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- form contact us -->
+    <div class="container p-5">
+        <form class="p-5">
+            <div class="fs-1 text-center fw-normal">Hubungi kami</div>
+            <div class="fs-5 text-center fw-light pb-5">Kami akan segera membalas pesan anda melalui email atau nomor whatsapp</div>
+            <div class="row py-3 d-flex justify-content-between">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="firstName">Nama</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Fulan bin Fulan">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="lastName">No. Whatsapp</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Masukkan nomor">
+                    </div>
+                </div>
+            </div>
+            <div class="row py-3 d-flex justify-content-between">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="abcd@gmail.com">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="phone">Nama Perusahaan</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="PT.">
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating py-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px"></textarea>
+                <label for="floatingTextarea2">Pesan</label>
+            </div>
+            <button id="submit-btn" type="submit" class="btn btn-light">Submit</button>
+        </form>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-light py-5">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-md-4">
+                    <p class="text-dark">Komp. Ruko Centre Point Medan Jalan Timor Blok G No. III/IV 2nd Floor, Gang Buntu, Medan Timur, Medan City, North Sumatra 20231</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img class="img-fluid" src="./img/img.png" alt="">
+                    <p class="text-dark">(+6261) 805 109 77</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
