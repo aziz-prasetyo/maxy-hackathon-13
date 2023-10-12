@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+
+    <!-- cdn bootstrap -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .navbar-nav a:hover{
+            color: #a80000;
+        }
+        #navbar{
+            background-color: #aeaeae;
+        }
+        #login-btn{
+            background-color: #aeaeae;
+            color: black;
+        }
+        #login-btn:hover{
+            background-color: #a80000;
+            color: white;
+        }
+        .subtitle{
+            margin-top: 10px;
+            font-size: 28px;
+        }
+        #map { 
+            margin-left: 10px; 
+            width: 586px; 
+            height: 951px; 
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top p-0">
+        <div class="container-fluid p-3 px-5" id="navbar">
+            <a class="navbar-brand m-0 fw-bold fs-3" href="homepage.html"><img src="img/img.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto gap-1 d-flex align-items-center">
+                    <li class="nav-item"><a class="nav-link fw-semibold fs-5" href="homepage.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold fs-5" href="product.html">Product</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold fs-5" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold fs-5" href="#">FAQ</a></li>
+                </ul>
+                <form class="d-flex justify-content-end">
+                    <a id="login-btn" class="btn btn-dark btn-outline-danger btn-lg text-bold" href="./login.html">Login</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <p class="subtitle"><b>Product</b></p>
+        <div class="container" style="margin: 0; padding: 0;">
+          <div class="row" style="margin: 0;">
+            <div class="col-2">
+              <button type="button" class="btn btn-outline-secondary"><img src="img/filter.png" style="width: 18px; height: 18px;"> filter</button>
+            </div>
+            <div class="col-4">
+              <div class="btn-group" style="background-color: #ffffff; color: black;">
+                <button type="button" class="btn btn-outline-dark" data-bs-toggle="dropdown"  data-bs-reference="parent" style="width: 192px; text-align: left;"><b>Urutkan</b></button>
+                <button type="button" class="btn btn-outline-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"  data-bs-reference="parent"></button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Harga Tertinggi ke Harga Terendah</a></li>
+                  <li><a class="dropdown-item" href="#">Rating Tertinggi ke Rating Terendah</a></li>
+                  <li><a class="dropdown-item" href="#">Terlaris</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-4">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row g-0">
+            <div class="col-sm-6 col-md-8">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="img/image.png" class="card-img-top" >
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between">
+                            <p style="font-size: 20px; margin-bottom: 5px;"><b>WeWork</b><div class="d-flex align-items-center"><img src="img/bintang.png" style="width: 24px; height: 24px;">5.0 (20)</p></div>
+                            </div>
+                        <span class="badge text-bg-primary">Meeting</span>
+                          <span class="badge text-bg-info" style="margin-bottom: 5px;">Working</span>
+                          <div class="d-flex align-items-center" style="font-size: 16px; margin-bottom: 0;"><p><img src="img/building.png" style="width: 22px; height: 19.73px;"> <b>Menara Astra</b></p></div>
+                          <div class="overflow-auto" style="height: 100px;">
+                            <p class="card-text">Jl. Jenderal Sudirman No.Kav.5-6, RT.10/RW.6, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10220</p>
+                        </div>
+                          <div class="d-flex align-items-center"><p><img src="img/kapasitas.png" style="width: 12px; height: 29px;"> <b>10-30 orang</b></p></div>
+                          <div class="d-flex align-items-center">
+                            <p class="card-text"><b>Rp 5.000.000/Hari</b></p>
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary"><center><button type="button" class="btn btn-light">Hubungi Kami</button></center></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="img/image2.png" class="card-img-top" >
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <p style="font-size: 20px; margin-bottom: 5px;"><b>GoWork</b><div class="d-flex align-items-center"><img src="img/bintang.png" style="width: 24px; height: 24px;">5.0 (20)</p></div>
+                            </div>
+                            <span class="badge text-bg-primary">Seminar</span>
+                          <span class="badge text-bg-info" style="margin-bottom: 5px;">Working</span>
+                          <div class="d-flex align-items-center" style="font-size: 16px; margin-bottom: 0;"><p><img src="img/building.png" style="width: 22px; height: 19.73px;"> <b>Plaza Indonesia</b></p></div>
+                          <div class="overflow-auto" style="height: 100px;">
+                            <p class="card-text">Plaza Indonesia, Level 5 Unit E021AB, Jl. M.H. Thamrin No.Kav. 28-30, Daerah Khusus Ibukota Jakarta 10350</p>
+                          </div>
+                          <div class="d-flex align-items-center">                                
+                            <p><img src="img/kapasitas.png" style="width: 12px; height: 29px;"> <b>10-20 orang</b></p></div>
+                          <div class="d-flex align-items-center">
+                            <p class="card-text"><b>Rp 1.125.000/Hari</b></p>
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary"><center><button type="button" class="btn btn-light">Hubungi Kami</button></center></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="img/image3.png" class="card-img-top" >
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <p style="font-size: 20px; margin-bottom: 5px;"><b>CoHive</b><div class="d-flex align-items-center"><img src="img/bintang.png" style="width: 24px; height: 24px;">5.0 (20)</p></div>
+                            </div>
+                            <span class="badge text-bg-primary">Event</span>
+                          <span class="badge text-bg-info" style="margin-bottom: 5px;">Working</span>
+                          <div class="d-flex align-items-center" style="font-size: 16px; margin-bottom: 0;"><p><img src="img/building.png" style="width: 22px; height: 19.73px;"> <b>Menara Mandiri</b></p></div>
+                          <div class="overflow-auto" style="height: 100px;">
+                            <p class="card-text">Jalan Jenderal Sudirman No.54–55, RT 5/RW 3, Senayan, Kebayoran Baru, Kota Jakarta Selatan, DKI Jakarta.</p>
+                          </div>
+                          <div class="d-flex align-items-center"><p><img src="img/kapasitas.png" style="width: 12px; height: 29px;"> <b>5-10 orang</b></p></div>
+                          <div class="d-flex align-items-center">
+                            <p class="card-text"><b>Rp 750.000/Hari</b></p>
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary"><center><button type="button" class="btn btn-light">Hubungi Kami</button></center></small>
+                        </div>
+                      </div>
+                    </div>
+                </div><br>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="img/image4.png" class="card-img-top" >
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <p style="font-size: 20px; margin-bottom: 5px;"><b>Studio Kini</b><div class="d-flex align-items-center"><img src="img/bintang.png" style="width: 24px; height: 24px;">5.0 (20)</p></div>
+                            </div>
+                            <span class="badge text-bg-primary">Video Shoot</span>
+                          <span class="badge text-bg-info" style="margin-bottom: 5px;">Photo Shoot</span>
+                          <div class="d-flex align-items-center" style="font-size: 16px; margin-bottom: 0;"><p><img src="img/building.png" style="width: 22px; height: 19.73px;"> <b>Ruko Boulevard</b></p></div>
+                          <div class="overflow-auto" style="height: 100px;">
+                            <p class="card-text">Jl. Surya Wijaya No.8, RT.4/RW.11, Kedoya Utara, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510</p>
+                          </div>
+                          <div class="d-flex align-items-center"><p><img src="img/kapasitas.png" style="width: 12px; height: 29px;"> <b>5-8 orang</b></p></div>
+                          <div class="d-flex align-items-center">
+                            <p class="card-text"><b>Rp 500.000/4 jam</b></p>
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary"><center><button type="button" class="btn btn-light">Hubungi Kami</button></center></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="img/image5.png" class="card-img-top" >
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <p style="font-size: 20px; margin-bottom: 5px;"><b>Yamaha Music</b><div class="d-flex align-items-center"><img src="img/bintang.png" style="width: 24px; height: 24px;">5.0 (20)</p></div>
+                            </div>
+                            <span class="badge text-bg-primary">Talk Show</span>
+                          <span class="badge text-bg-info" style="margin-bottom: 5px;">Seminar</span>
+                          <div class="d-flex align-items-center" style="font-size: 16px; margin-bottom: 0;"><p><img src="img/building.png" style="width: 22px; height: 19.73px;"> <b>Yamaha Music Center Building</b></p></div>
+                          <div class="overflow-auto" style="height: 100px;">
+                            <p class="card-text">Jl. Gatot Subroto No.Kav. 4, RT.2/RW.4, Karet Semanggi, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12930</p>
+                          </div>
+                          <div class="d-flex align-items-center"><p><img src="img/kapasitas.png" style="width: 12px; height: 29px;"> <b>100-150 orang</b></p></div>
+                          <div class="d-flex align-items-center">
+                            <p class="card-text"><b>Rp 10.000.000/Hari</b></p>
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-body-secondary"><center><button type="button" class="btn btn-light">Hubungi Kami</button></center></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="img/image6.png" class="card-img-top" >
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <p style="font-size: 20px; margin-bottom: 5px;"><b>Werkspace SOHO</b><div class="d-flex align-items-center"><img src="img/bintang.png" style="width: 24px; height: 24px;">5.0 (20)</p></div>
+                            </div>
+                            <span class="badge text-bg-primary">Private Meeting</span>
+                          <span class="badge text-bg-info" style="margin-bottom: 5px;">Working</span>
+                          <div class="d-flex align-items-center" style="font-size: 16px; margin-bottom: 0;"><p><img src="img/building.png" style="width: 22px; height: 19.73px;"> <b>Neo SOHO</b></p></div>
+                          <div class="overflow-auto" style="height: 100px;">
+                            <p class="card-text">Odomoro City, JL let. S Parman kav 28 Soho Capital, 19th Floor Tanjung Duren Selatan Grogol Petamburan 14470, RT.3/RW.5, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470.</p>
+                          </div>
+                          <div class="d-flex align-items-center"><p><img src="img/kapasitas.png" style="width: 12px; height: 29px;"> <b>5 orang</b></p></div>
+                          <div class="d-flex align-items-center">
+                            <p class="card-text"><b>Rp 300.000/3 jam</b></p>
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-body-secondary"><small class="text-body-secondary"><center><button type="button" class="btn btn-light">Hubungi Kami</button></center></small></small>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4"><div id="map"></div></div>
+          </div>    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="./maps.js"></script>
+</body>
+</html>
