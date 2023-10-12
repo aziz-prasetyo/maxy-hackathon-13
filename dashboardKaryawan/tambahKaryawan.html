@@ -20,58 +20,46 @@
   <div class="container-fluid">
       <div class="row">
         <!-- navbar -->
-          <div class="col-md-3 col-lg-2" style="background-color: #C8C8C8">
-              <nav class="navbar navbar-expand-md navbar-light bg-light" style="background-color: #C8C8C8">
-                  <div class="container-fluid">
-                    <div class="row row-cols-1">
-                      <div class="col pb-3">
-                        <a class="navbar-brand" href="#"><img src="../img/img.png" alt="" srcset=""></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                      </div>
-                      <div class="col">
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                          <div class="accordion accordion-flush bg-light" id="accordionnavbar" style="width: 100%;">
-                            <div class="accordion-item">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                  Karyawan
-                                </button>
-                              </h2>
-                              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                  <ul class="navbar-nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">Tambah Karyawan</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">List Karyawan</a>
-                                    </li>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <ul class="navbar-nav flex-column ps-2">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Mitra</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Produk</a>
-                            </li>
+        <div class="col-md-3 col-lg-2" style="background-color: #C8C8C8">
+            <nav class="navbar navbar-expand-md navbar-light" style="background-color: #C8C8C8">
+                <div class="container-fluid">
+                  <div class="row row-cols-1">
+                    <div class="col pb-3">
+                      <a class="navbar-brand" href="#"><img src="../img/img.png" alt="" srcset=""></a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                      </button>
+                    </div>
+                    <div class="col">
+                      <div class="collapse navbar-collapse" id="navbarNav">
+                          <ul class="navbar-nav flex-column">
+                              <li class="nav-item">
+                                  <a href="#sidemenu" data-bs-toggle="collapse" class="nav-link" id="menu">
+                                      <i class="fa fa-table"></i>
+                                      <span>Karyawan</span>
+                                  </a>
+                                  <ul class="nav collapse ms-1" id="sidemenu" data-bs-parent="#menu">
+                                      <li>
+                                          <a href="#" class="nav-link" aria-current="page" style="color: black;">Tambah Karyawan</a>
+                                      </li>
+                                      <li>
+                                          <a href="#" class="nav-link" aria-current="page" style="color: black;">List Karyawan</a>
+                                      </li>
+                                  </ul>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Mitra</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Produk</a>
+                              </li>
                           </ul>
-                          <!-- <div class="row row-cols-1">
-                            <div class="col">
-                            </div>
-                            <div class="col">
-                            </div>
-                          </div> -->
-                        </div>
                       </div>
                     </div>
                   </div>
-              </nav>
-          </div>
+                </div>
+            </nav>
+        </div>
 
           <!-- content dashboard -->
           <div class="col-md-9 col-lg-10">
