@@ -2,7 +2,10 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -26,5 +29,19 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    /**
+     * Render the exception into an HTTP response.
+     */
+    public function render($request, Throwable $exception): JsonResponse
+    {
+        if ($exception instanceof ModelNotFoundException) {
+            return response()->json([
+                'message' => 'This is not the URL you are looking for.',
+            ], 404);
+        }
+
+        return Parent::render($request, $exception);
     }
 }

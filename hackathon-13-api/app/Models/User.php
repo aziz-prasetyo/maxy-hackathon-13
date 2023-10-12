@@ -7,6 +7,8 @@ namespace App\Models;
 use App\Enums\UserRoleName;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -69,8 +71,24 @@ class User extends Authenticatable
     /**
      * Get the user detail associated with the user.
      */
-    public function userDetail()
+    public function userDetail(): HasOne
     {
         return $this->hasOne(UserDetail::class, 'user_id', 'id');
+    }
+
+    /**
+     * The positions that belong to the user.
+     */
+    public function positions(): BelongsToMany
+    {
+        return $this->belongsToMany(Position::class, 'employee_positions', 'employee', 'position_id');
+    }
+
+    /**
+     * Get the employee detail associated with the user.
+     */
+    public function employeeDetail(): HasOne
+    {
+        return $this->hasOne(EmployeeDetail::class, 'employee', 'id');
     }
 }

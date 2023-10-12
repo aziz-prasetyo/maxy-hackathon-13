@@ -19,7 +19,7 @@ class UserDetailFactory extends Factory
     {
         return [
             'agency_name' => 'Kelompok 13',
-            'position' => 'Administrator',
+            'position' => 'Karyawan Tetap',
             'gender' => UserGender::MALE,
             'place_of_birth' => $this->faker->city(),
             'date_of_birth' => now(),

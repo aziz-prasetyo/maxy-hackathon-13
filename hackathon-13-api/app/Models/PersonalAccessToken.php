@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Laravel\Sanctum\Contracts\HasAbilities;
+use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
 
-class EmployeeDetail extends Model
+class PersonalAccessToken extends SanctumPersonalAccessToken
 {
     use HasFactory, HasUuids;
 
@@ -24,22 +25,4 @@ class EmployeeDetail extends Model
      * @var string
      */
     protected $keyType = 'string';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'nip',
-        'employee'
-    ];
-
-    /**
-     * Get the employee that owns the employee detail.
-     */
-    public function employee(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'employee', 'id');
-    }
 }
