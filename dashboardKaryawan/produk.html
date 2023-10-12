@@ -6,12 +6,33 @@
   <title>Dashboard Template</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <style>
+   #navbar{
+            background-color: #C8C8C8;
+            border-bottom: 1px solid black;
+    }
+    #navbar #profile{
+        border-radius: 50%;
+        width: 30px;
+    }
     #detail-btn{
         box-shadow: rgba(0, 0, 0, 1) 2.4px 2.4px 3.2px;
     }
   </style>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top p-0">
+        <div class="container-fluid p-1 px-5" id="navbar">
+            <a class="navbar-brand m-0 fw-bold fs-3" href="#"><img src="logo wf.png" alt="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex align-items-center gap-3">
+                <p class="d-flex align-items-center m-0 fw-bold">Muhamad Fikri Rahmayandi</p>
+                <img class="img-fluid" id="profile" src="profile.png">
+            </div>
+        </div>
+        </div>
+    </nav>
   <div class="container-fluid">
       <div class="row">
         <!-- navbar -->
