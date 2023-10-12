@@ -13,11 +13,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with(['userDetail'])->get();
+        $users = User::with(['userDetail'])->paginate(20);
 
         return response()->json([
             'success' => true,
-            'message' => 'successfully retrieved all users.',
+            'message' => 'Successfully retrieved all users.',
             'data' => $users,
         ]);
     }

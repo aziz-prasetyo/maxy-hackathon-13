@@ -19,7 +19,7 @@ class CheckAdministratorRole
         if (!$request->user('api')?->role->isAdministrator()) {
             return response()->json([
                 'message' => 'This is not the URL you are looking for.',
-            ]);
+            ], 404);
         }
 
         return $next($request);

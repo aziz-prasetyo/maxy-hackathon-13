@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Position extends Model
 {
@@ -38,7 +39,7 @@ class Position extends Model
     /**
      * The employees that belong to the position.
      */
-    public function employees()
+    public function employees(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'employee_positions', 'position_id', 'employee');
     }

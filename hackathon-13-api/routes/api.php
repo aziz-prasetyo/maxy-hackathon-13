@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\PositionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +23,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 Route::middleware(['role.administrator'])->group(function () {
     Route::apiResource('users', UserController::class);
+    Route::apiResource('employees', EmployeeController::class);
+    Route::apiResource('positions', PositionController::class);
 });
 
 Route::middleware(['role.employee'])->group(function () {

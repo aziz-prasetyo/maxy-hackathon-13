@@ -6,6 +6,7 @@ use App\Enums\UserGender;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class UserDetail extends Model
 {
@@ -54,7 +55,7 @@ class UserDetail extends Model
     /**
      * Get the user that owns the user detail.
      */
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
